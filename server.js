@@ -13,7 +13,7 @@
         secret: 'your-secret-key',
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false } // Set to true if using HTTPS
+        cookie: { secure: false }
     }));
 
     app.use(express.json());
@@ -58,7 +58,7 @@
     app.get('/get_id', (req, res) => {
         if (req.session.playerID) {
             res.status(200).json({
-                Id: req.session.playerID // Return the username from session
+                Id: req.session.playerID
             });
         } else {
             res.status(404).json({ error: 'ID not found' });
@@ -71,7 +71,7 @@
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    const sql = 'SELECT * FROM users WHERE Username = ?'; // Match DB column name
+    const sql = 'SELECT * FROM users WHERE Username = ?';
 
     db.query(sql, [username], (err, results) => {
         if (err) {
@@ -86,7 +86,7 @@ app.post('/login', (req, res) => {
 
                 req.session.playerID = username;
                 console.log(`User '${username}' logged in successfully.`);
-                return res.redirect('/'); // safer redirect
+                return res.redirect('/');
             } else {
                 console.warn(`Invalid password for user: ${username}`);
                 return res.redirect('/login?error=Invalid%20credentials');

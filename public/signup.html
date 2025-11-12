@@ -1,8 +1,28 @@
-<!Doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <Title>LifeLine Care</Title>
-    </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website</title>
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="CSS/style.css" />
+  <script src="Javascript/login.js"></script>
+
+</head>
 <body>
+
+  <nav>
+    <div class="logo">My Website</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="signup-btn">Sign Up</button>
+  </nav>
+
+  <main>
     <form action="/signup" method="POST">
                 <div class="input-container">
                     <label for="username">Username</label>
@@ -18,5 +38,14 @@
                 </div>
                 <button type="submit" class="main-button">Sign Up</button>
             </form>
-    </body>
+            <div class="signup-container">
+                <p>Not a user?</p> <p onclick="goToLogin()">Sign In</p>
+            </div>
+  </main>
+
+  <footer>
+    © 2025 My Website | All Rights Reserved
+  </footer>
+
+</body>
 </html>

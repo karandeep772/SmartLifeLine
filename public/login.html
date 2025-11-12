@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Website</title>
-  <!-- Link external CSS -->
+  
   <link rel="stylesheet" href="CSS/style.css" />
+  <script src="Javascript/login.js"></script>
 </head>
 <body>
 
-  <!-- ---------- Navbar ---------- -->
   <nav>
     <div class="logo">My Website</div>
     <ul>
@@ -38,13 +38,12 @@
                 <button type="submit" class="main-button">Login</button>
             </form>
             <div class="signup-container">
-                <p>Not a user? <a href="signup.html">Sign Up</a></p>
+                <p>Not a user? <p onclick="goToSignup()">Sign In</p>
             </div>
         </div>
     </div>
   </main>
 
-  <!-- ---------- Footer ---------- -->
   <footer>
     © 2025 My Website | All Rights Reserved
   </footer>

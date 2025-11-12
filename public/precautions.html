@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Symptoms</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script defer src="/Javascript/Symptoms.js"></script>
+</head>
+<body>
+    <h2>Report Your Symptoms</h2>
+    <form id="symptomForm"> 
+        <div id="symptomContainer">
+            <div class="symptom-field">
+                <label>Symptom 1:</label>
+                <input type="text" name="symptoms[]" required>
+            </div>
+        </div>
+        <button type="button" id="addSymptomBtn">➕ Add Another Symptom</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="resultsContainer"></div>
+</body>
+</html>

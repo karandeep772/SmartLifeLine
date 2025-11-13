@@ -1,0 +1,112 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Heading styling */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form container */
+form#symptomForm {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Chat bubble style for symptom input */
+.symptom-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.symptom-field label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.symptom-field input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 93.75%;
+    transition: 0.3s;
+    outline: none;
+}
+
+.symptom-field input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.5);
+}
+
+/* Buttons styling */
+button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#addSymptomBtn {
+    background: #4a90e2;
+    color: #fff;
+}
+
+#addSymptomBtn:hover {
+    background: #357ABD;
+}
+
+form button[type="submit"] {
+    background: #00C851;
+    color: #fff;
+}
+
+form button[type="submit"]:hover {
+    background: #007E33;
+}
+
+/* Results container for showing chat messages */
+#resultsContainer {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual result as chat bubble */
+.result-bubble {
+    background: #e1ffc7;
+    padding: 10px 15px;
+    border-radius: 20px;
+    align-self: flex-start;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Optional: alternate bubble colors for multiple symptoms */
+.result-bubble:nth-child(even) {
+    background: #c7f0ff;
+    align-self: flex-end;
+}

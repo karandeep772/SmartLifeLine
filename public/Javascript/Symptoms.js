@@ -2,12 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("symptomContainer");
     const addBtn = document.getElementById("addSymptomBtn");
     const form = document.getElementById("symptomForm");
-    const resultsContainer = document.getElementById("resultsContainer"); // Get the new div
+    const resultsContainer = document.getElementById("resultsContainer");
     
     let count = 1;
 
-    // --- This is your existing "Add Symptom" logic ---
-    // --- It's perfect, no changes needed ---
+    // --- This is your existing "Add Symptom" logic (no changes) ---
     addBtn.addEventListener("click", () => {
         if (count >= 10) {
             alert("You can add a maximum of 10 symptoms.");
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // --- 👇 THIS IS THE NEW LOGIC TO SUBMIT THE FORM 👇 ---
+    // --- 👇 THIS IS THE CORRECTED FORM SUBMISSION LOGIC 👇 ---
     form.addEventListener("submit", async (event) => {
         // 1. Stop the browser from refreshing the page
         event.preventDefault(); 
@@ -56,13 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
             // 6. Get the JSON response back from the server
             const result = await response.json();
 
-            // 7. Display the AI's advice in the results div
-            // We replace newlines (\n) with <br> tags for proper HTML display
-            const formattedAdvice = result.rephrasedContentskill.replace(/\n/g, '<br>');
-            resultsContainer.innerHTML = `
-                <h3>Medical Advice:</h3>
-                <p>${formattedAdvice}</p>
-            `;
+            if (result.advice) {
+                const formattedAdvice = result.advice.replace(/\n/g, '<br>');
+                resultsContainer.innerHTML = `
+                    <h3>Medical Advice:</h3>
+                    <p>${formattedAdvice}</p>
+                `;
+            } else {
+                throw new Error("Received an empty response from the server.");
+            }
 
         } catch (error) {
             // 8. Show an error message if something went wrong
